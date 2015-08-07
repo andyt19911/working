@@ -590,7 +590,7 @@ def retrieve_matrixUrl(url, channel):
 	channel = channel.split('/');
 	channel = channel[len(channel) -1];
 	
-	url += '/stalker_portal/server/api/matrix.php?channel=' + channel + '&mac=' + mac;
+	url += '/ipmedia/server/api/matrix.php?channel=' + channel + '&mac=' + mac;
 	
 	# RETRIEVE THE 1 EXTM3U
 	request = urllib2.Request(url)
