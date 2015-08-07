@@ -505,21 +505,11 @@ def getEPG(portal_mac, url, serial, path):
 			c_entry_content = doc.createTextNode(epg['category']);
 			c_entry.appendChild(c_entry_content);
 			pg_entry.appendChild(c_entry);
-			
-		
-			if channel != None and channel['logo'] != '':
-				i_entry = doc.createElement('icon');
-				i_entry.setAttribute("src", url + '/stalker_portal/misc/logos/320/' + channel['logo']);
-				i_entry.appendChild(i_entry_content);
-				pg_entry.appendChild(i_entry);
-
 	
 	with open(portalurl, 'w') as f: f.write(doc.toxml(encoding='utf-8'));
 	
 	return doc.toxml(encoding='utf-8');
 	
-
-
 
 def retriveUrl(portal_mac, url, serial, channel, tmp):
 	
