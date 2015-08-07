@@ -101,7 +101,7 @@ def getProfile(url):
 def retrieveData(url, values ):
 	global key, mac;
 		
-	url += '/stalker_portal'
+	url += '/ipmedia'
 	load = '/server/load.php'
 	refer = '/c/'
 	timezone = 'America%2FChicago';
