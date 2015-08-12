@@ -103,15 +103,14 @@ def retrieveData(url, values ):
 		
 	url += '/ipmedia'
 	load = '/server/load.php'
-	refer = '/c/'
-	timezone = 'America%2FChicago';
+	refer = '/c/';
 
 	user_agent 	= 'Mozilla/5.0 (QtEmbedded; U; Linux; C) AppleWebKit/533.3 (KHTML, like Gecko) MAG200 stbapp ver: 4 rev: 1812 Mobile Safari/533.3';
 	
 	if key != None:
 		headers 	= { 
 			'User-Agent' : user_agent, 
-			'Cookie' : 'mac=' + mac + '; stb_lang=en; timezone=' + timezone,
+			'Cookie' : 'mac=' + mac + '; stb_lang=en;',
 			'Referer' : url + refer,
 			'Accept' : '*/*',
 			'Connection' : 'Keep-Alive',
@@ -121,7 +120,7 @@ def retrieveData(url, values ):
 	else:
 		headers 	= { 
 			'User-Agent' : user_agent, 
-			'Cookie' : 'mac=' + mac+ '; stb_lang=en; timezone=' + timezone,
+			'Cookie' : 'mac=' + mac+ '; stb_lang=en;',
 			'Referer' : url + refer,
 			'Accept' : '*/*',
 			'Connection' : 'Keep-Alive',
@@ -580,7 +579,7 @@ def retrieve_matrixUrl(url, channel):
 	channel = channel.split('/');
 	channel = channel[len(channel) -1];
 	
-	url += '/ipmedia/server/api/matrix.php?channel=' + channel + '&mac=' + mac;
+	url += '/ipmedia/server/api/channel=' + channel + '&mac=' + mac;
 	
 	# RETRIEVE THE 1 EXTM3U
 	request = urllib2.Request(url)
